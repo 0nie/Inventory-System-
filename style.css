@@ -1,0 +1,370 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+h1{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x:hidden ;
+}
+
+.wrapper{
+    display: flex;
+}
+
+#sidebar{
+    width: 70px;
+    min-width: 70px;    
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    background-color: #d6d5d5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+#sidebar.expand{
+    width: 200px;
+    min-width: 200px;
+}
+
+#toggle-btn{
+    background: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+#toggle-btn i{
+    font-size: 1.5rem;
+    color: black;
+}
+
+.sidebar-logo{
+    margin: auto 0;
+    display: flex;
+    gap: 7px;
+}
+
+.sidebar-logo a{
+    color: black;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+.sidebar-logo img{
+    width: 40px;
+    border-radius: 20px;
+    
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span,
+#sidebar:not(.expand) .sidebar-nav .general
+{
+    display: none;
+}
+
+.sidebar-nav{
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link, .sidebar-nav .general{
+    padding: .625rem 1.625rem;
+    color: black;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i{
+    font-size: 1.1rem;
+    margin-right: .75rem;
+
+}
+
+a.sidebar-link:hover{
+    background-color: gray;
+    border-left: 3px solid #3b7ddd;
+}
+
+.sidebar-item{
+    position: relative;
+}
+
+#sidebar:not(.expand)   .sidebar-item .sidebar-dropdown{
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color:#d6d5d5;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown + .sidebar-dropdown{
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after{
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapse::after{
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar .sidebar-nav .sidebar-item a,
+.sidebar-footer a
+{
+    text-decoration: none;
+}
+
+#sidebar .sidebar-nav .general{
+    color: gray;
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-weight: 600
+}
+
+
+.sidebar-footer a{
+    display: flex;
+    align-items: center;
+}
+
+/* MAIN */
+
+
+
+.main{
+    width: 100%;
+    max-width: 1300px;
+    margin: 10px 210px; 
+    border: 1px solid rgb(190, 190, 190);
+    background-color: #fff;
+    height: 98vh;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.top{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.products{
+    display: flex;
+    gap: 1rem;
+}
+
+.top .inventory h1{
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.main .top .products .searching input{
+    border: none;
+    outline: none;
+}
+
+
+.main .top .products .searching{
+    border: 1px solid rgb(157, 157, 157);
+    padding: .5rem;
+    border-radius: 10px;
+    height: 2.6rem;
+    width: 17rem;
+}
+
+.main .top .products .button button{
+    border: none;
+    outline: none;
+    background-color: #fff;
+}
+
+.main .top .products .button{
+    border: 1px solid rgb(157, 157, 157) ;
+    padding: .5rem;
+    border-radius: 7px;
+    width: 5rem;
+}
+
+.products .button i{
+    color: rgb(71, 71, 71);
+}
+
+.products .button span{
+    color: rgb(59, 58, 58);
+}
+
+.products .adding button{
+    border-radius: 6px;
+    border: 1px solid rgba(255, 68, 0, 0.895);
+    background-image: linear-gradient(rgba(253, 138, 81, 0.958), rgb(210, 58, 2));
+    padding: .5rem;
+    color: #fff;
+    width: 9rem;
+}
+/* TABLE */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    margin-top: 1rem;
+}
+
+.styled-table th{
+    padding: 7px;
+    background: rgb(174, 174, 174);
+    text-align: center;
+    font-weight: 500;
+}
+
+.styled-table td{
+    text-align: center;
+    padding: 7px;
+  
+}
+
+.prod .image img{
+    width: 4rem;
+    height: 4.5rem;
+}
+
+.table .prod {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    gap: 1rem;
+}
+
+
+.table .prod .text p{
+    font-weight: 600;
+}
+
+.table .prod .text button{
+    border: 1px solid rgb(188, 187, 187);
+    width: 4rem;
+    padding: .2rem;
+    border-radius: 3px;
+    font-weight: 300;
+}
+
+.table .prod text{
+    display: flex;
+    
+}
+
+.styled-table .price span{
+    color: rgb(147, 147, 147);
+}
+
+.styled-table .inventory .number{
+    color: rgb(147, 147, 147);
+}
+
+.styled-table .edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+input[type="number"]{
+    border: none;
+    outline: none;
+    width: 3rem;
+}
+
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    
+}
+
+.edit .set, .edit .total{
+    border: 1px solid #d6d5d5;
+    padding: 7px 1rem;
+    border-radius: 8px;
+}
+
+.edit{
+    display: flex;
+    gap: .3rem;
+}
+
+.edit .set span, .edit .total span{
+    color: rgb(147, 147, 147);
+}
+
+.edit  .add{
+    background-image: linear-gradient(rgba(253, 138, 81, 0.958), rgb(210, 58, 2));
+    border-radius: 5px;
+    padding: .4rem .6rem;
+    border: 1px solid rgba(248, 95, 18, 0.958) ;
+    color: #fff;
+}
+
+.inventory .flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.edit  .delete{
+    background-image: linear-gradient(rgb(253, 64, 64), rgb(179, 0, 0));
+    border-radius: 5px;
+    padding: .4rem .6rem;
+    border: 1px solid  rgb(179, 0, 0);
+    color: #fff;
+}
+
+table tr{
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
