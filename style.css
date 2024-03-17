@@ -455,6 +455,14 @@ table tr{
     opacity: 1;
 }
 
+.prod .text .type{
+    font-size: 13px;
+    color: #7b7f88;
+    border: 1px solid #7b7f88;
+    border-radius: 5px;
+    padding: .3rem .4rem;
+}
+
 
 
 
