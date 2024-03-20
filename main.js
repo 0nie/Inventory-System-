@@ -15,14 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// This script ensures that the spinner buttons are hidden in Firefox.
-var numberInput = document.querySelector('.no-spinner');
-numberInput.addEventListener('keydown', function (e) {
-    if (e.keyCode === 38 || e.keyCode === 40) {
-        e.preventDefault();
-    }
-});
-
 const dropdowns = document.querySelectorAll(".dropdown");
 
 dropdowns.forEach(dropdown => {
@@ -79,5 +71,20 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             dropdownMenu.style.display = 'none';
         }
-    });
+    }); 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
