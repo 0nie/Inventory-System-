@@ -528,7 +528,6 @@ section#add{
 .wrapper-bottom .grid-container{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    row-gap: 1.5rem;
 }
 
 .wrapper-bottom .description{
@@ -675,4 +674,9 @@ section#add{
 .menus-open{
     display: block;
     opacity: 1;
+}
+
+.menus li:hover{
+    background-color:rgb(109, 109, 109);
+    color: #fff;
 }

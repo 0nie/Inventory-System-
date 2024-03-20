@@ -59,3 +59,20 @@ dropdowns.forEach(dropdown => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const submitButton = document.querySelector('.submit');
+    const cancelButton = document.querySelector('.cancel');
+
+    // Add click event listener to submit button
+    submitButton.addEventListener("click", function() {
+        // Navigate back to index.html when submit button is clicked
+        window.location.href = "index.html";
+    });
+
+    // Add click event listener to cancel button
+    cancelButton.addEventListener("click", function() {
+        // Navigate back to index.html when cancel button is clicked
+        window.location.href = "index.html";
+    });
+});
